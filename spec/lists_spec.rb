@@ -32,4 +32,26 @@ describe "Lists" do
       expect(transformed_list).to include(18, 20)
     end
   end
+
+  context "experimenting with a doubled list" do
+
+    before do
+      @list = double("my_list", :size => 8)
+    end
+
+    it "should think it's the correct size" do
+      expect(@list.size).to eql (8)
+    end
+  end
+
+  context "experimenting with a stubbed list" do
+
+    before do
+      allow(@list).to receive(:size).and_return(8)
+    end
+
+    it "should think it's the correct size" do
+      expect(@list.size).to eql (8)
+    end
+  end
 end
