@@ -54,4 +54,14 @@ describe "Lists" do
       expect(@list.size).to eql (8)
     end
   end
+
+  context "experimenting with a stubbed list (via let)" do
+
+    let(:list) { double("my_list", :size => 8) }
+
+    it "should think it's the correct size" do
+      actual = list.size
+      expect(actual).to eql (8)
+    end
+  end
 end
